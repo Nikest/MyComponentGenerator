@@ -1,0 +1,30 @@
+import * as React from 'react';
+<% if (relay) {%>import { createFragmentContainer, graphql } from 'react-relay';<% } %>
+import { cssNameService } from 'Service/Styles';
+
+const c = cssNameService(require('./<%= name %>.scss'));
+
+interface I<%= name %>Props {
+
+}
+
+interface I<%= name %>State {
+
+}
+
+<% if (!relay) {%>export <% } %>class <%= name %> extends React.Component<I<%= name %>Props, I<%= name %>State> {
+  render() {
+    return (
+      <<%= tag %> className={c('container')}><%= name %></<%= tag %>>
+    );
+  }
+}
+
+<% if (relay) {%>
+export const <%= name %>Container = createFragmentContainer(<%= name %>, {
+  rootField: graphql`
+    fragment <%= name %>_rootField on RootField {
+
+    }`,
+});
+<% } %>
