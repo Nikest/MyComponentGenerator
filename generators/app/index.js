@@ -42,7 +42,7 @@ module.exports = class extends Generator {
     const path = this.props.directory? this.props.directory : '';
 
     this.fs.copyTpl(
-      this.templatePath('component/component.tsx'),
+      this.templatePath('component/component.template'),
       this.destinationPath(`${path}${componentName}/${componentName}.tsx`),
       {
         name: componentName,
@@ -51,14 +51,14 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath('component/component.scss'),
+      this.templatePath('component/component.styles'),
       this.destinationPath(`${path}${componentName}/${componentName}.scss`),
       {
         name: componentName
       }
     );
     this.fs.copyTpl(
-      this.templatePath('component/index.tsx'),
+      this.templatePath('component/index.template'),
       this.destinationPath(`${path}${componentName}/index.tsx`),
       {
         name: componentName
