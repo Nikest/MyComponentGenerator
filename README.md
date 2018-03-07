@@ -7,7 +7,6 @@ sudo npm install -g yo
 git clone https://github.com/Nikest/MyComponentGenerator.git
 cd MyComponentGenerator
 npm install
-cd generator-component
 sudo npm link
 ```
 
