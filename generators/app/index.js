@@ -1,3 +1,7 @@
+var Generator = require('yeoman-generator');
+var yosay = require('yosay');
+var chalk = require('chalk');
+
 module.exports = class extends Generator {
   prompting() {
     this.log(
@@ -57,9 +61,5 @@ module.exports = class extends Generator {
         name: componentName
       }
     );
-  }
-
-  install() {
-    this.installDependencies();
   }
 };
