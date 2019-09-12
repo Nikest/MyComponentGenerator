@@ -12,11 +12,6 @@ module.exports = class extends Generator {
         default: 'Default'
       },
       {
-        type: 'confirm',
-        name: 'relay',
-        message: 'Generate with Relay?'
-      },
-      {
         type: 'input',
         name: 'tagName',
         message: 'Enter the HTML tag wrapper',
@@ -37,7 +32,6 @@ module.exports = class extends Generator {
 
   writing() {
     const componentName = this.props.componentName;
-    const relay = this.props.relay;
     const tag = this.props.tagName;
     const path = this.props.directory? this.props.directory : '';
 
@@ -46,7 +40,6 @@ module.exports = class extends Generator {
       this.destinationPath(`${path}${componentName}/${componentName}.tsx`),
       {
         name: componentName,
-        relay: relay,
         tag: tag
       }
     );
